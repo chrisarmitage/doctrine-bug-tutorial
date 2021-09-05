@@ -5,5 +5,8 @@
   },
   "autoload": {
     "psr-0": {"": "src/"}
+  },
+  "require-dev": {
+    "symfony/cache": "^5.3"
   }
 }
