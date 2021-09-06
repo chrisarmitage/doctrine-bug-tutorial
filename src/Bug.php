@@ -37,10 +37,44 @@ class Bug
     private $status;
 
     private $products;
+    private $engineer;
+    private $reporter;
 
     public function __construct()
     {
         $this->products = new ArrayCollection();
+    }
+
+    public function setEngineer(User $engineer)
+    {
+        $engineer->assignedToBug($this);
+        $this->engineer = $engineer;
+    }
+
+    public function setReporter(User $reporter)
+    {
+        $reporter->addReportedBug($this);
+        $this->reporter = $reporter;
+    }
+
+    public function getEngineer()
+    {
+        return $this->engineer;
+    }
+
+    public function getReporter()
+    {
+        return $this->reporter;
+    }
+
+    public function assignToProduct(Product $product)
+    {
+        $this->products[] = $product;
+    }
+
+    public function getProducts()
+    {
+        return $this->products;
     }
 
     public function getId()
