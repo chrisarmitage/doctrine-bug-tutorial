@@ -36,8 +36,19 @@ class Bug
      */
     private $status;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Product")
+     */
     private $products;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="assignedBugs")
+     */
     private $engineer;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="reportedBugs")
+     */
     private $reporter;
 
     public function __construct()
