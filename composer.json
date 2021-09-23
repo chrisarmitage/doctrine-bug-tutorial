@@ -1,7 +1,8 @@
 {
   "require": {
     "doctrine/orm": "^2.9.3",
-    "symfony/yaml": "2.*"
+    "symfony/yaml": "2.*",
+    "ramsey/uuid": "^4.2"
   },
   "autoload": {
     "psr-0": {"": "src/"}
